@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PriceListManager
+namespace PriceListManager.Servicies
 {
     public static class ArchiveManager
     {
