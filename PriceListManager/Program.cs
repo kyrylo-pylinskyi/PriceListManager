@@ -5,7 +5,7 @@ using System.Linq;
 
 var start = DateTime.Now;
 
-FtpConnection connection = new FtpConnection("138.201.56.185", "suppliers", "zR3uB2aJ3m", "mysupplier", "price_quantity.zip");
+FtpConnection connection = new FtpConnection("128.0.0.1", "suppliers", "password", "mysupplier", "price_quantity.zip");
 
 MemoryStream memoryStream = connection.DownloadFile();
 
@@ -28,7 +28,7 @@ var priceColumns = new Dictionary<string, int>()
 
 var price = CsvReader.Parse(archive["PriceList.csv"], 1).AsPrice(';', priceColumns);
 
-connection = new FtpConnection("138.201.56.185", "suppliers", "zR3uB2aJ3m", "mysupplier", "details.zip");
+connection = new FtpConnection("128.0.0.1", "suppliers", "password", "mysupplier", "mysupplier", "details.zip");
 
 memoryStream = connection.DownloadFile();
 archive = ArchiveManager.UnzipFile(memoryStream);
